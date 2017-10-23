@@ -16,6 +16,7 @@ public class MainFrame extends JFrame{
     private JButton jbc = new JButton("c");
     private JTextField jtf = new JTextField();
     Random ran = new Random();
+    Boolean flag;
 
     private LoginFrame loginFrame;
     public MainFrame(LoginFrame login){
@@ -38,8 +39,33 @@ public class MainFrame extends JFrame{
         cp.add(jtf,BorderLayout.NORTH);
         cp.add(jpl,BorderLayout.CENTER);
         jtf.setEditable(false);
+//        for(int i=0;i<10;i++){
+//            jbtns[i]=new JButton(Integer.toString(ran.nextInt(10)));
+//            jpl.add(jbtns[i]);
+//            jbtns[i].addActionListener(new ActionListener() {
+//                @Override
+//                public void actionPerformed(ActionEvent e) {
+//                    JButton tmpButton = (JButton)e.getSource();
+//                    jtf.setText(jtf.getText()+tmpButton.getText());
+//                }
+//            });
+//        }
+        int arr [] = new int[10];
+        for(int i=0;i<arr.length;i++){
+            do{
+                flag=false;
+                arr[i]=ran.nextInt(10);
+                if(i!=0){
+                    for(int j=0;j<i;j++){
+                        if(arr[i] == arr[j]){
+                            flag=true;
+                        }
+                    }
+                }
+            }while (flag);
+        }
         for(int i=0;i<10;i++){
-            jbtns[i]=new JButton(Integer.toString(ran.nextInt(10)));
+            jbtns[i]=new JButton(Integer.toString(arr[i]));
             jpl.add(jbtns[i]);
             jbtns[i].addActionListener(new ActionListener() {
                 @Override
