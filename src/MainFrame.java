@@ -39,17 +39,6 @@ public class MainFrame extends JFrame{
         cp.add(jtf,BorderLayout.NORTH);
         cp.add(jpl,BorderLayout.CENTER);
         jtf.setEditable(false);
-//        for(int i=0;i<10;i++){
-//            jbtns[i]=new JButton(Integer.toString(ran.nextInt(10)));
-//            jpl.add(jbtns[i]);
-//            jbtns[i].addActionListener(new ActionListener() {
-//                @Override
-//                public void actionPerformed(ActionEvent e) {
-//                    JButton tmpButton = (JButton)e.getSource();
-//                    jtf.setText(jtf.getText()+tmpButton.getText());
-//                }
-//            });
-//        }
         int arr [] = new int[10];
         for(int i=0;i<arr.length;i++){
             do{
